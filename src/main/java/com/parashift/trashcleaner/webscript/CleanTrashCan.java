@@ -65,13 +65,13 @@ public class CleanTrashCan {
                         @Override
                         public Void doWork() throws Exception {
 
-                            logger.debug("Purging All Archive Nodes for Workspace");
+                            logger.info("Purging All Archive Nodes for Workspace");
 
                             nodeArchiveService.purgeAllArchivedNodes(StoreRef.STORE_REF_WORKSPACE_SPACESSTORE);
 
                             latch.countDown();
 
-                            logger.debug("Purging Completed");
+                            logger.info("Purging Completed");
                             return null;
                         }
                     }, user);
